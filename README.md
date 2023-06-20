@@ -24,12 +24,11 @@ from cellidentifierdx import annotate_cell_types
 
 reference_file = "/path/to/your/reference_file.xlsx"
 expr_file = "/path/to/your/expr_file.csv"
-tissue_annotations = annotate_cell_types(reference_file, expr_file)
+tissue, cell_type_annotations = annotate_cell_types(reference_file, expr_file, 'sheetname')
 
-for tissue, cell_type_annotations in tissue_annotations:
-    print(f"For tissue: {tissue}")
-    for cluster_idx, cell_type, avg_score in cell_type_annotations:
-        print(f"Cluster {cluster_idx} is annotated as {cell_type} with average Bayesian score of {avg_score}.")
+for cluster_idx, cell_type, avg_score in cell_type_annotations:
+    print(f"Cluster {cluster_idx} is annotated as {cell_type} with average Bayesian score of {avg_score}.")
+
 ```
 
 ## License
