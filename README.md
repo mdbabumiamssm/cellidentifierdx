@@ -3,6 +3,7 @@
 3. **Installation**: Instructions for how to install your project.
 4. **Usage**: Instructions for how to use your project after it's installed.
 5. **License**: The license your project is distributed under.
+6. Note: This software package is yet to be published (unpublished)! If you have used it for publication purpose, please share authorship with MD. BABU MIA, PHD; ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI. Contact for detials: md.babu.mia@mssm.edu
 # CellIdentifierDX
 
 CellIdentifierDX is a Python package for identifying cell types using Bayesian scoring.
