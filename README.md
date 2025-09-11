@@ -1,5 +1,5 @@
-1. **Project Name**: The name of your project.
-2. **Description**: A brief description of what your project does.
+1. **Project Name**: Single Cell Annotation by cellidentifierdx.
+2. **Description**: Annotate your single cell using cellidentifierd.
 3. **Installation**: Instructions for how to install your project.
 4. **Usage**: Instructions for how to use your project after it's installed.
 5. **License**: The license your project is distributed under.
