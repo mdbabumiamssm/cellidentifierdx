@@ -18,7 +18,58 @@ pip install cellidentifierdx
 
 ## Usage
 
-Here's a basic example of how to use CellIdentifierDX:
+Here's a basic example of how to use 
+--> Extract 250 genes per cluster: 
+#getting to gene lists - step 2 continue
+import os
+import numpy as np
+import pandas as pd
+import anndata
+import scanpy as sc
+import scvi
+import scipy.io
+import matplotlib.pyplot as plt
+
+
+
+# Perform differential expression analysis
+sc.tl.rank_genes_groups(combined_adata, groupby="leiden_scvi", key_added="rank_genes", method="t-test_overestim_var", n_genes=250)
+
+# Extract marker genes for each cluster along with their scores, fold changes, and p-values
+marker_genes_250 = pd.DataFrame(combined_adata.uns['rank_genes']['names']).head(250)
+marker_scores_250 = pd.DataFrame(combined_adata.uns['rank_genes']['scores']).head(250)
+marker_logfoldchanges_250 = pd.DataFrame(combined_adata.uns['rank_genes']['logfoldchanges']).head(250)
+marker_pvals_250 = pd.DataFrame(combined_adata.uns['rank_genes']['pvals']).head(250)
+marker_pvals_adj_250 = pd.DataFrame(combined_adata.uns['rank_genes']['pvals_adj']).head(250)
+
+# Melt each DataFrame to create a long format and add cluster information
+melted_dataframes = []
+for cluster_idx in marker_genes_250.columns:
+    cluster_df = pd.DataFrame(
+        {
+            "Cluster": cluster_idx,
+            "Gene": marker_genes_250[cluster_idx],
+            "Score": marker_scores_250[cluster_idx],
+            "Log2FoldChange": marker_logfoldchanges_250[cluster_idx],
+            "P-value": marker_pvals_250[cluster_idx],
+            "Adjusted P-value": marker_pvals_adj_250[cluster_idx],
+        }
+    )
+    melted_dataframes.append(cluster_df)
+    
+# Concatenate the melted_dataframes into a single DataFrame
+marker_genes_info_250 = pd.concat(melted_dataframes, axis=0, ignore_index=True)
+
+# Set the dataset identifier
+dataset_identifier = "dataset name"
+
+# Save the detailed information for the top 250 genes to a CSV file
+marker_genes_info_250.to_csv(f"pathtosave/{dataset_identifier}_marker_genes_details_250.csv", index=False)
+
+# Save the gene names only for the top 250 genes to a separate CSV file
+marker_genes_250.to_csv(f"pathtosave/{dataset_identifier}_marker_genes_only_250.csv", index=False)
+
+--> CellIdentifierDX:
 
 ```python
 from cellidentifierdx import annotate_cell_types
