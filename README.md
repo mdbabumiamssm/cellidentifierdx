@@ -3,7 +3,7 @@
 3. **Installation**: Instructions for how to install your project.
 4. **Usage**: Instructions for how to use your project after it's installed.
 5. **License**: The license your project is distributed under.
-6. Note: This software package is yet to be published (unpublished)! If you have used it for publication purpose, please share authorship with MD. BABU MIA, PHD; ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI. Contact for detials: md.babu.mia@mssm.edu
+6. Note: This software package is yet to be published (unpublished)! If you have used it for publication purpose, please share authorship with MD. BABU MIA, PHD; ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI. Contact for detials: communications@biomedsai.com
 # CellIdentifierDX
 
 CellIdentifierDX is a Python package for identifying cell types using Bayesian scoring.
@@ -82,6 +82,18 @@ for cluster_idx, cell_type, avg_score in cell_type_annotations:
     print(f"Cluster {cluster_idx} is annotated as {cell_type} with average Bayesian score of {avg_score}.")
 
 ```
+
+## BioMedsAI
+
+The maintainer, MD Babu Mia, PhD, is the founder of **[BioMedsAI](https://biomedsai.com/)**, a public benefit corporation for biomedical research and discovery.
+
+- **Padma, the AI scientist**: a self-serve workspace for study design review, analysis of your own data, and interpretation.
+- **Scientist-led analysis** and an **end-to-end package** from samples to a finished study, with lab work through partner laboratories.
+- **Human Scientist Consultation**, **independent evaluation of biomedical AI**, and **workshops and training**.
+
+New accounts start with a **Free Day**. **The $100,000 Surprise** puts up to US$100,000 in total toward discounts on BioMedsAI packages while it lasts ([terms](https://biomedsai.com/legal/disclaimers/)).
+
+Contact: **[communications@biomedsai.com](mailto:communications@biomedsai.com)** · [biomedsai.com](https://biomedsai.com/) · Research use only.
 
 ## License
 
